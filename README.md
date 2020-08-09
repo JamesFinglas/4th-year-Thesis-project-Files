@@ -1,4 +1,4 @@
-# 4th-year-Thesis-project-Files
+# VimalTotal Virustotal parser
 This repo contains all the completed files for my 4th Year Project Thesis
 
 Here is a sample of the raw python code:
@@ -14,14 +14,14 @@ import os
 import json
 import easygui
 
-# Packages to be imported into interpreter:
-# Pillow Pillow-PIL PyInstaller easygui requests
+/# Packages to be imported into interpreter:
+/# Pillow Pillow-PIL PyInstaller easygui requests
 
-# Original Files in the virtual environment (venv) folder which MUST not be deleted:
-# py.spec, python, vimal logo.png, ViMalTotal_Version_2.py, ViMalTotal_Version_2.spec
+/# Original Files in the virtual environment (venv) folder which MUST not be deleted:
+/# py.spec, python, vimal logo.png, ViMalTotal_Version_2.py, ViMalTotal_Version_2.spec
 
-# This is an open source project, it is free to be used and modified. However, I would appreciated if the original
-# developer is cited and the program is referenced in any re-developments.
+/# This is an open source project, it is free to be used and modified. However, I would appreciated if the original
+/# developer is cited and the program is referenced in any re-developments.
 
 """Designed and code by James Finglas, 2019 (with advice from Cathal Murphy)"""
 
@@ -35,13 +35,13 @@ import easygui
    you must enter you own API key and it must be a valid API key"""
 
 
-# Function to create a file to store the global API key for permanence
+/# Function to create a file to store the global API key for permanence
 def makeapifile(apikey):
     with open('api_File.json', 'w') as fp:
         fp.write("{\"apikey\": " + "\"" + str(apikey) + "\"" + "}")
 
 
-# check performed to request a valid API key be set.
+/# check performed to request a valid API key be set.
 apikey = ''
 switchmode = False
 if apikey == '':
@@ -62,7 +62,7 @@ while switchmode:
         switchmode = False
 
 
-# define function to maintain count and id of file/hash files
+/# define function to maintain count and id of file/hash files
 def getapikey():
     if os.path.isfile('api_File.json'):
         with open('api_File.json') as data_file:
@@ -72,148 +72,148 @@ def getapikey():
         return apikey
 
 
-# define function to raise a card to the front of the deck
+/# define function to raise a card to the front of the deck
 def raise_frame(frame):
     frame.tkraise()
 
 
-# define function to quit the current process
+/# define function to quit the current process
 def quitprocess():
     exit(0)
 
 
-# define function to output divider line of astrix's
+/# define function to output divider line of astrix's
 def hashstars():
     Hashreportoutput.insert(END, "****************************************************" + "\n")
 
 
-# define function to output new line with blank string
+/# define function to output new line with blank string
 def hashnewline():
     Hashreportoutput.insert(END, "" + "\n")
 
 
-# define function to output divider line of astrix's
+/# define function to output divider line of astrix's
 def scanstars():
     ScanIdReportOutput.insert(END, "****************************************************" + "\n")
 
 
-# define function to output new line with blank string
+/# define function to output new line with blank string
 def scannewline():
     ScanIdReportOutput.insert(END, "" + "\n")
 
 
-# define function to output divider line of astrix's
+/# define function to output divider line of astrix's
 def filestars():
     FileIdReportOutput.insert(END, "****************************************************" + "\n")
 
 
-# define function to output new line with blank string
+#/ define function to output new line with blank string
 def filenewline():
     FileIdReportOutput.insert(END, "" + "\n")
 
 
-# define function to output divider line of astrix's
+/# define function to output divider line of astrix's
 def urlstars():
     UrlReportOutput.insert(END, "****************************************************" + "\n")
 
 
-# define function to output new line with blank string
+/# define function to output new line with blank string
 def urlnewline():
     UrlReportOutput.insert(END, "" + "\n")
 
 
-# define function to output divider line of astrix's
+/# define function to output divider line of astrix's
 def ipstars():
     IPReportOutput.insert(END, "****************************************************" + "\n")
 
 
-# define function to output new line with blank string
+/# define function to output new line with blank string
 def ipnewline():
     IPReportOutput.insert(END, "" + "\n")
 
 
-# define function to output divider line of astrix's
+/# define function to output divider line of astrix's
 def domainstars():
     DomainReportOutput.insert(END, "****************************************************" + "\n")
 
 
-# define function to output new line with blank string
+/# define function to output new line with blank string
 def domainnewline():
     DomainReportOutput.insert(END, "" + "\n")
 
 
-# Function to create Hash scan request confirmation alert box
+/# Function to create Hash scan request confirmation alert box
 def hashthank():
     messagebox.showinfo("Thank you!", "Your Hash report request has been submitted")
 
 
-# Function to create Hash Report text File generation confirmation alert box
+/# Function to create Hash Report text File generation confirmation alert box
 def hashthank2():
     messagebox.showinfo("Thank you!", "Generating Hash report text file!")
 
 
-# Function to create Statistics only request confirmation alert box
+/# Function to create Statistics only request confirmation alert box
 def stats():
     messagebox.showinfo("Thank you!", "Generating Stats from report!")
 
 
-# Function to generate Scan ID report request confirmation message
+/# Function to generate Scan ID report request confirmation message
 def scanidthank():
     messagebox.showinfo("Thank you!", "Your Scan ID report request has been submitted")
 
 
-# Function to generate scan report text file generation confirmation
+/# Function to generate scan report text file generation confirmation
 def scanidthank2():
     messagebox.showinfo("Thank you!", "Generating Scan ID report text file!")
 
 
-# Function to generate new file scan report request confirmation
+/# Function to generate new file scan report request confirmation
 def filescanthank():
     messagebox.showinfo("Thank you!", "Your File Scan report request has been submitted")
 
 
-# Function to generation File report text file generation confirmation message
+/# Function to generation File report text file generation confirmation message
 def filescanthank2():
     messagebox.showinfo("Thank you!", "Generating File report text file!")
 
 
-# function to generate URL report request submission confirmation
+/# function to generate URL report request submission confirmation
 def urlthank():
     messagebox.showinfo("Thank you!", "Your request for a URL report has been submitted")
 
 
-# function to generate URL text file creation confirmation
+/# function to generate URL text file creation confirmation
 def urlthank2():
     messagebox.showinfo("Thank you!", "Generating URL ID report text file!")
 
 
-# function to generate URL report request submission confirmation
+/# function to generate URL report request submission confirmation
 def ipthank():
     messagebox.showinfo("Thank you!", "Your request for an IP report has been submitted")
 
 
-# function to generate IP text fil generation confirmation
+/# function to generate IP text fil generation confirmation
 def ipthank2():
     messagebox.showinfo("Thank you!", "Generating IP ID report text file!")
 
 
-# function to generate URL report request submission confirmation
+/# function to generate URL report request submission confirmation
 def domainthank():
     messagebox.showinfo("Thank you!", "Your request for a Domain report has been submitted")
 
 
-# function to generate domain text fil generation confirmation
+/# function to generate domain text fil generation confirmation
 def domainthank2():
     messagebox.showinfo("Thank you!", "Generating Domain report text file!")
 
 
-# declare root frame
+/# declare root frame
 root = Tk()
 root.title('ViMal - Total : A  VirusTotal Parser by James Finglas')
 root.geometry('556x866')
 root.resizable(False, False)
 
-# Declare frames for card layout
+/# Declare frames for card layout
 MainMenu = Frame(root, bg='Navy Blue')
 Hash = Frame(root, bg='Navy Blue')
 ScanID = Frame(root, bg='Navy Blue')
@@ -222,13 +222,13 @@ URL = Frame(root, bg='Navy Blue')
 IP = Frame(root, bg='Navy Blue')
 Domain = Frame(root, bg='Navy Blue')
 
-# For loop to to select a frame from a list
+/# For loop to to select a frame from a list
 for frame in (MainMenu, Hash, ScanID, File, URL, IP, Domain):
     frame.grid(row=1, column=0, sticky='news')
 
 """########################################## MAIN MENU OPTIONS #####################################################"""
 
-# The section is where all the GUI element of the Main frame are declared and initialized
+/# The section is where all the GUI element of the Main frame are declared and initialized
 img = ImageTk.PhotoImage(PilImage.open('vimal logo.png'))
 Label(MainMenu, image=img).pack()
 Label(MainMenu, width=60, text='Version 2.0 - Developed With VirusTotal API and Python 3.7', bg='gray').pack()
@@ -249,7 +249,7 @@ Label(MainMenu, width=60, text='With thanks to Virus-Total For their free use of
 
 """#################################### HASH LOOKUP OPTIONS #########################################################"""
 
-# The section is where all the GUI elements and functions of the hash lookup page frame are declared and initialized
+/# The section is where all the GUI elements and functions of the hash lookup page frame are declared and initialized
 Label(Hash, width=60, text='Hash Lookup Options', bg='gray').pack()
 Button(Hash, width=57, text='Go to Scan ID Lookup Page', command=lambda: raise_frame(ScanID)).pack()
 Button(Hash, width=57, text='Go to Main Menu', command=lambda: raise_frame(MainMenu)).pack()
@@ -259,7 +259,7 @@ HashIdTextBox = Entry(Hash, width=60, text="", justify="left")
 HashIdTextBox.pack(expand=0)
 
 
-# function to request a hash report
+/# function to request a hash report
 def hashfunction(apikey):
     url = 'https://www.virustotal.com/vtapi/v2/file/report'
     hashuserinput = HashIdTextBox.get()
@@ -369,7 +369,7 @@ def hashfunction(apikey):
 Button(Hash, width=57, text='Submit Hash Report Request', command=lambda: hashfunction(getapikey())).pack()
 
 
-# define function to maintain count and id of  file/hash files
+/# define function to maintain count and id of  file/hash files
 def makehashfile(event):
     newcounter = 0
     if os.path.isfile('hash_counterFile.json'):
@@ -389,7 +389,7 @@ def makehashfile(event):
     hashthank2()
 
 
-# define function to retrieve stats from desired file/hash report
+/# define function to retrieve stats from desired file/hash report
 def displayhashstatsonly(apikey):
     url = 'https://www.virustotal.com/vtapi/v2/file/report'
     hashuserinput = HashIdTextBox.get()
@@ -476,7 +476,7 @@ Button(Hash, width=57, text='Exit Program', command=lambda: quitprocess()).pack(
 
 """#################################### Scan ID LOOKUP OPTIONS ######################################################"""
 
-# The section is where all the GUI element of the Scan ID lookup page frame are declared and initialized
+/# The section is where all the GUI element of the Scan ID lookup page frame are declared and initialized
 Label(ScanID, width=60, text='Scan ID Lookup Options', bg='gray').pack()
 Button(ScanID, width=57, text='Go to File Lookup Page', command=lambda: raise_frame(File)).pack()
 Button(ScanID, width=57, text='Go to Main Menu', command=lambda: raise_frame(MainMenu)).pack()
@@ -486,7 +486,7 @@ ScanIdTextBox = Entry(ScanID, width=60, text="", justify="left")
 ScanIdTextBox.pack()
 
 
-# define function to request a file or hash report
+/# define function to request a file or hash report
 def ScanIdFunction(apikey):
     url = 'https://www.virustotal.com/vtapi/v2/file/report'
     scanuserinput = ScanIdTextBox.get()
@@ -603,7 +603,7 @@ def ScanIdFunction(apikey):
                     swtichmode2 = False
 
 
-# define function to maintain count and id of ScanID files
+/# define function to maintain count and id of ScanID files
 def MakeScanIdFile(event):
     newcounter = 0
     if os.path.isfile('ScanId_counterFile.json'):
@@ -617,7 +617,7 @@ def MakeScanIdFile(event):
     else:
         with open('ScanId_counterFile.json', 'w') as fp:
             fp.write("{\"counter\": 0}")
-    # create file which will be used for file number iteration and maintain file/hash data record
+   /# create file which will be used for file number iteration and maintain file/hash data record
     with open('Scan ID report ' + str(newcounter), 'w') as fp:
         fp.write(ScanIdReportOutput.get(1.0, END))
     scanidthank2()
@@ -626,7 +626,7 @@ def MakeScanIdFile(event):
 Button(ScanID, width=57, text='Submit Scan ID Report Request', command=lambda: ScanIdFunction(getapikey())).pack()
 
 
-# define function to retrieve stats from desired file/hash report
+/# define function to retrieve stats from desired file/hash report
 def displayscanidstatsonly(apikey):
     url = 'https://www.virustotal.com/vtapi/v2/file/report'
     scanuserinput = ScanIdTextBox.get()
@@ -716,13 +716,13 @@ Button(ScanID, width=57, text='Exit Program', command=lambda: quitprocess()).pac
 
 """#################################### FILE LOOKUP OPTIONS #########################################################"""
 
-# The section is where all the GUI element of the File lookup page frame are declared and initialized
+/# The section is where all the GUI element of the File lookup page frame are declared and initialized
 Label(File, width=60, text='File Lookup Options', bg='gray').pack()
 Button(File, width=57, text='Go to URL Lookup Page', command=lambda: raise_frame(URL)).pack()
 Button(File, width=57, text='Go to Main Menu', command=lambda: raise_frame(MainMenu)).pack()
 
 
-# define function to select file you wish to be scanned and request the scan
+/# define function to select file you wish to be scanned and request the scan
 def fileoutput(apikey):
     url = 'https://www.virustotal.com/vtapi/v2/file/scan'
     fileselection = askopenfilename()
@@ -734,9 +734,9 @@ def fileoutput(apikey):
         params = {'apikey': apikey}
         files = {'file': (fileselection, open(fileselection, 'rb'))}
         response = requests.post(url, files=files, params=params).json()
-        # ensure text area is empty
+        /# ensure text area is empty
         FileIdReportOutput.delete(1.0, END)
-        # write to text field
+        /# write to text field
         if str(response["response_code"]) != "1":
             FileIdReportOutput.insert(END, "An Error Occurred: File not found! (Please check if the "
                                            "file selection was not "
@@ -783,7 +783,7 @@ def fileoutput(apikey):
                                     'relates to this request.' + "\n")
         filenewline()
 
-        # create record file of scan data
+        /# create record file of scan data
         with open('File Scan ID File', 'a') as fp:
             # define function to write a divider
             fp.write("**************************New Record******************************")
