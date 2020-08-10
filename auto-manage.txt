@@ -1,0 +1,15 @@
+Step 1: Naviagate to the root folder
+
+Step 2: Copy the file provided and paste to the root folder
+
+Step 3: add the job to the crontab manaagement interface to create a recurring CronJob
+with the following command to open the cron tab config file:
+crontab -e
+
+Step 6: Select the first option (1) to edit the file with the nano editor
+
+Step 7: Add the following line to the bottom of the file
+
+0 * * * * /root/auto-manage
+
+Step 8: Save the file with ctrl+x then y and enter.

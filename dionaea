@@ -1,0 +1,13 @@
+/opt/dionaea/var/log/dionaea/dionaea*.log {
+	notifyempty
+	missingok
+	rotate 7
+	daily
+	delaycompress
+	compress
+	crearte 660 root root
+	dateext
+	postrotate
+		service dionaea restart
+	endscript
+}

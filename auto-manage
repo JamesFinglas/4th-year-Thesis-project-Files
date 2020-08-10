@@ -1,0 +1,35 @@
+:!#/bin/bash
+
+restartServer()
+{
+
+        echo "***Beginning Rolling Restart of MHN Related Services***"
+        echo "-------------------------------------------------------"
+        date
+	echo "-------------------------------------------------------"
+        echo "Restarting the mongod database"
+	echo "------------------------------"
+	sudo service mongod restart
+	echo "Resetting MHN log Permissions and Group access"
+        echo Set mhn.log permissions to www-data:www-data
+        echo "------------------------------------------"
+	echo Set mhn.log to chmod 666
+	sudo chmod 666 /home/user/mhn-log/mhn.log
+        echo "------------------------------------------------"
+        sudo chown www-data:www-data /home/user/mhn-log/mhn.log
+        sudo chown www-data:www-data /home/user/mhn-log/.log.
+        sudo chown www-data:www-data /var/log/mhn/.log
+        sudo chown www-data:www-data /var/log/mhn/.log.
+	sleep 2
+        echo RESTARTING SUPERVISOR SERVICES
+        echo "-----------------------------"
+        sudo supervisorctl restart all
+        echo "-----------------------------"
+        echo "Verifying the mhn-celery-worker service has successfuly restarted"
+	echo "----------------------------------------------------------------"
+        sudo supervisorctl start mhn-celery-worker
+        echo "  "
+        echo "  "
+        exit 1
+}
+restartServer

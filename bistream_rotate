@@ -1,0 +1,8 @@
+#/bin/bash
+
+#Compress the files in the Dionaea bistream folder older than 1 hour old
+find /opt/dionaea/var/lib/dionaea/bistreams/* -type f --mmin +60 -exec gzip {} \;
+
+# Clear the files in the Dionaea bistream folder every 6 hours
+find /opt/dionaea/var/lib/dionaea/bistreams/* -type f -mmin +360 -exec rm {} \;
+find /opt/dionaea/var/lib/dionaea/bistreams/* -type d -empty -delete

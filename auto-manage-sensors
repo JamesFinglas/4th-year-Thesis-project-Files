@@ -1,0 +1,61 @@
+:!#/bin/bash
+
+restartServer()
+{
+
+        echo "***Beginning Rolling Restart of MHN Related Services***"
+        echo "-------------------------------------------------------"
+        date
+	echo "-------------------------------------------------------"
+	sleep 2
+        echo RESTARTING SUPERVISOR SERVICES
+        echo "-----------------------------"
+        sudo supervisorctl stop amun
+	sleep 5
+	sudo supervisorctl start amun
+	sleep 120
+	sudo supervisorctl stop conpot
+	sleep 5
+	sudo supervisorctl start conpot
+	sleep 120
+	sudo supervisorctl stop cowrie
+	sleep 5
+	sudo supervisorctl start cowrie
+	sleep 120
+	sudo supervisorctl stop dionaea
+	sleep 5
+	sudo supervisorctl start dionaea
+	sleep 120
+	sudo supervisorctl stop elastichoney
+	sleep 5
+	sudo supervisorctl start elastichoney
+	sleep 120
+	sudo supervisorctl stop p0f
+	sleep 5
+	sudo supervisorctl start p0f
+	sleep 120
+	sudo supervisorctl stop snort
+        sleep 5
+        sudo supervisorctl start snort
+        sleep 120
+	sudo supervisorctl stop suricata
+        sleep 5
+        sudo supervisorctl start suricata
+        sleep 120
+	sudo supervisorctl stop shockpot
+        sleep 5
+        sudo supervisorctl start shockpot
+        sleep 120
+	sudo supervisorctl stop wordpot
+        sleep 5
+        sudo supervisorctl start wordpot
+        sleep 120
+        echo "-----------------------------"
+        echo "Verifying the mhn-celery-worker service has successfuly restarted"
+	echo "----------------------------------------------------------------"
+        sudo supervisorctl start mhn-celery-worker
+        echo "  "
+        echo "  "
+        exit 1
+}
+restartServer
